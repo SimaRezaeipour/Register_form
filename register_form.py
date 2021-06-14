@@ -1,13 +1,9 @@
 import streamlit as st 
 import pandas as pd 
 import numpy as np 
-import seaborn as sns 
-from PIL import Image 
 import os 
 from datetime import datetime
 import exifread
-import mutagen
-from PyPDF2 import PdfFileReader
 import streamlit.components.v1 as stc 
 import base64
 import time
