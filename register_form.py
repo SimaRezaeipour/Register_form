@@ -30,20 +30,9 @@ HTML_BANNER2 = """
     </div>
     """
 @st.cache
-def load_image(image_file):
-	img = Image.open(image_file)
-	return img
 
 def get_readable_time(mytime):
 	return datetime.fromtimestamp(mytime).strftime('%Y-%m-%d-%H:%M')
-
-def make_downloadable(data):
-	csvfile = data.to_csv(index = False)
-	b64 = base64.b64encode(csvfile.encode()).decode()
-	st.markdown("### ** 📥 ⬇️ Download CSV File **")
-	new_filename = "metadata_result_{}.csv".format(timestr)
-	href = f'<a href="data:file/csv;base64,{b64}" download = "{new_filename}">Click Here!</a>'
-	st.markdown(href,unsafe_allow_html=True)
 
 def create_uploaded_filetable():
 	c.execute('CREATE TABLE IF NOT EXISTS filestable(name TEXT,family TEXT, occupation TEXT, interest TEXT, other TEXT)')
