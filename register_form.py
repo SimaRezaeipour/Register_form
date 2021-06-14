@@ -1,9 +1,7 @@
 import streamlit as st 
 import pandas as pd 
-import numpy as np 
 import os 
 from datetime import datetime
-import exifread
 import streamlit.components.v1 as stc 
 import base64
 import time
