@@ -1,6 +1,7 @@
 import streamlit as st 
 import pandas as pd 
-import os 
+import os
+from PIL import Image 
 from datetime import datetime
 import streamlit.components.v1 as stc 
 import base64
@@ -30,6 +31,9 @@ HTML_BANNER2 = """
     </div>
     """
 @st.cache
+def load_image(image_file):
+	img = Image.open(image_file)
+	return img
 
 def get_readable_time(mytime):
 	return datetime.fromtimestamp(mytime).strftime('%Y-%m-%d-%H:%M')
